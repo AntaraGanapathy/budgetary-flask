@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound Interest Calculator</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/activity2.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
+    <script src="{{ url_for('static',filename='js/activity2.js') }}"></script>
+    <style>
+        /* #main-heading {
+            text-align: center;
+            font-size: 40px;
+
+        }
+
+        #append {
+            margin-top: 2em;
+        }
+
+        .btn {
+            margin-right: 4rem;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="container" div="compound-interest ">
+        <h3 class = 'page-title'>Compound Interest Calculator</h3>
+        <form id="ciForm" class = 'form'>
+          <div class="form-group">
+            <label for="principalCompound" class = 'form__label'>Principal Amount</label>
+            <input type="text" class="form__input" id="principalCompound" placeholder="Enter amount without dollar sign">
+          </div>
+          <div class="form-group">
+            <label for="interestCompound" class = 'form__label'>Interest Rate (%)</label>
+            <input type="text" class="form__input" id="interestCompound" placeholder="Example: 12%">
+          </div>
+          <div class="form-group">
+            <label for="timesCompounded" class = 'form__label'>Times Compounded per Year</label>
+            <input type="text" class="form__input" id="timesCompounded"
+              placeholder="Example: 4 (means compounded quarterly)">
+          </div>
+          <div class="form-group">
+            <label for="termCompound" class = 'form__label'>Term of Loan (Number of years)</label>
+            <input type="text" class="form__input" id="termCompound" placeholder="Example: 2 (must be in terms of years)">
+          </div><br>
+          <button type="submit" class="button" onclick="compoundInterest()">Submit</button>
+          <div>
+            <p class="lead mt-3" id="ciOutput-01"></p>
+            <p class="lead mb-3" id="ciOutput-02"></p>
+          </div>
+          <div>
+            <input  class="button" type="button" value="Reset"
+              onClick="document.getElementById('ciForm').reset()">
+          </div>
+        </form>
+        
+      </div>
+</body>
+
+</html>
