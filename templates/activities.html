@@ -1,12 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/activities.css') }}">
     <title>Activities</title>
 </head>
-<body>
-    <h1>Activities</h1>
+
+<body class='center-body'>
+
+    <table id='dashboard-container'>
+        <tr>
+            <td>
+                <div class='dashboard-subcontainer'>
+                    <h3 class='dashboard-heading'>Compound vs Simple Interest</h3>
+                    <img class='dashboard-img' src="{{ url_for('static',filename='images/activities-icon1.png') }}"
+                        width="25%">
+
+                    <a href="{{url_for('activity1')}}" id='button-dashboard'>Get Started!</a>
+                </div>
+            </td>
+            <td>
+                <div class='dashboard-subcontainer'>
+                    <h3 class='dashboard-heading'>Compound Interest Calculator</h3>
+                    <img class='dashboard-img' src="{{ url_for('static',filename='images/activities-icon2.png') }}"
+                        width="25%">
+
+                    <a href="{{url_for('activity2')}}" id='button-dashboard'>Get Started!</a>
+                </div>
+            </td>
+            <td>
+                <div class='dashboard-subcontainer'>
+                    <h3 class='dashboard-heading'>Foreign Exchange Calculator</h3>
+                    <img class='dashboard-img' src="{{ url_for('static',filename='images/activities-icon3.png') }}"
+                        width="25%">
+
+                    <a href="{{url_for('activity3')}}" id='button-dashboard'>Get Started!</a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class='dashboard-subcontainer'>
+                    <h3 class='dashboard-heading'>Savings Target Calculator</h3>
+                    <img class='dashboard-img' src="{{ url_for('static',filename='images/activities-icon4.png') }}"
+                        width="25%">
+
+                    <a href="{{url_for('activity4')}}" id='button-dashboard'>Get Started!</a>
+                </div>
+            </td>
+            <td>
+                <div class='dashboard-subcontainer'>
+                    <h3 class='dashboard-heading'>Activities</h3>
+
+                    <a href="{{url_for('activities')}}" id='button-dashboard'>Get Started!</a>
+                </div>
+            </td>
+            <td>
+                <div class='dashboard-subcontainer'>
+                    <h3 class='dashboard-heading'>Activities</h3>
+
+                    <a href="{{url_for('activities')}}" id='button-dashboard'>Get Started!</a>
+                </div>
+            </td>
+        </tr>
+    </table>
 </body>
+
 </html>

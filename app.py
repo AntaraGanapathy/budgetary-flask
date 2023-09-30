@@ -53,6 +53,10 @@ def activity3():
     else:
         return render_template('activity3.html')
 
+@app.route('/activities/savings-target-calculator')
+def activity4():
+    return render_template('activity4.html')
+
 @app.route('/tools')
 def tools():
     return render_template('tools.html')

@@ -1,0 +1,74 @@
+body {
+    background-color: #f2ffcc;
+}
+
+.center-body {
+    text-align: center;
+    background-color: #f2ffcc;
+}
+
+#desc {
+    color: #4D7C8A;
+    padding-top: 15px;
+    font-size: 30px;
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+#dashboard-container {
+    width: 100%;
+    border-spacing: 20px;
+    /* display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5%;
+    margin-left: 3%;
+    margin-right: 3%; */
+    /* position: absolute; */
+    /* margin-top: 5%; */
+    /* transform: translate(50%, 50%); */
+}
+
+.dashboard-subcontainer {
+    height: 100%;
+    /* width: 100%; */
+    border: 2px solid #1B4079;
+    border-radius: 30px;
+    background-color: #f8f9f3;
+    margin-left: 10px;
+    margin-right: 10px;
+    /* margin-top: 30%; */
+}
+
+#button-dashboard {
+    display: inline-block;
+    width: 75%;
+    min-width: 65px;
+    margin: 3% 2% 7% 2%;
+    padding: 2%;
+    text-decoration: none;
+    border-radius: 30px;
+    text-align: center;
+    background-color: #1B4079;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    /* border: 1px solid #333333; */
+}
+
+.dashboard-subcontainer:hover {
+    box-shadow: 10px 10px 10px gray;
+}
+
+.dashboard-desc {
+    padding: 2%;
+    font-size: 18px;
+}
+
+.dashboard-heading {
+    padding: 2%;
+    font-size: 28px;
+}
+
+.page-title {
+    font-size: 35px;
+}
