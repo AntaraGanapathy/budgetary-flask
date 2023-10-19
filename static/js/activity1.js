@@ -18,7 +18,6 @@ const button = document.querySelector(".input-group button");
 
 //Attach an event listener
 button.addEventListener("click", calculateGrowth);
-// button.addEventListener("click", calculateGrowth2);
 
 const data = [];
 const data2 = [];
@@ -59,10 +58,8 @@ function calculateGrowth(e) {
 }
 
 function drawGraph() {
-    console.log(data)
-    console.log(data2)
     if (click_counter > 0) {
-        line2.destroy();
+        line.destroy();
     }
     line = new Chart(context, {
         type: 'line',
@@ -89,7 +86,6 @@ function drawGraph() {
 }
 
 function drawGraph2() {
-    console.log(data2);
     if (click_counter > 0) {
         line2.destroy();
     }
@@ -114,35 +110,6 @@ function drawGraph2() {
 
     click_counter = click_counter + 1;
 }
-
-// const data2 = [];
-// const labels2 = [];
-
-// function calculateGrowth2(e) {
-//     e.preventDefault();
-//     data2.length = 0;
-//     labels2.length = 0;
-//     let growth2 = 0;
-//     try {
-//         const initial = parseInt(intialAmount.value);
-//         const period = parseInt(years.value);
-//         const interest2 = parseInt(rates2.value);
-//         // const comp = parseInt(compound.value);
-
-//         for(let i = 1; i <= period; i++) {
-//             const final2 = interest2 * i;
-//             // const final2 = ( initial * interest2 * i ) / 100;
-//             data2.push(toDecimal(final2, 2));
-//             labels2.push("Year " + i);
-//             growth2 = toDecimal(final2, 2);
-//         }
-//         //
-//         message2.innerText = `You will have $${growth2} after ${period} years with Simple Interest ${data2}`;
-//         drawGraph2();
-//     } catch (error) {
-//         console.error(error);
-//     }
-// }
 
 function toDecimal(value, decimals) {
     return +value.toFixed(decimals);
