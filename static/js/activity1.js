@@ -62,7 +62,7 @@ function drawGraph() {
     console.log(data)
     console.log(data2)
     if (click_counter > 0) {
-        line2.destroy();
+        line.destroy();
     }
     line = new Chart(context, {
         type: 'line',

@@ -56,6 +56,10 @@ def activity3():
 def activity4():
     return render_template('activity4.html')
 
+@app.route('/activities/sip-calculator')
+def activity5():
+    return render_template('activity5.html')
+
 @app.route('/tools')
 def tools():
     return render_template('tools.html')
