@@ -1,10 +1,5 @@
-body {
-    background-color: #f2ffcc;
-}
-
 .center-body {
     text-align: center;
-    background-color: #f2ffcc;
 }
 
 #brand-name {
@@ -57,6 +52,7 @@ body {
     border-radius: 30px;
     background-color: #f8f9f3;
 }
+
 #button-dashboard {
     display: inline-block;
     width: 75%;
@@ -75,7 +71,7 @@ body {
 
 .dashboard-subcontainer:hover {
     box-shadow: 10px 10px 10px gray;
-  }
+}
 
 .dashboard-desc {
     padding: 2%;

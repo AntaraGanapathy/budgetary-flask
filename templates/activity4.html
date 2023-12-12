@@ -2,27 +2,65 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Savings Calculator</title>
-    <script type="text/javascript" src="{{ url_for('static',filename='js/activity4.js') }}"></script>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Savings Calculator</title>
+  <script type="text/javascript" src="{{ url_for('static',filename='js/activity4.js') }}"></script>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/activity4.css') }}">
 </head>
 
 <body>
-    <h1> Savings Calculator</h1>
-    <p>
-        Starting amount: <input type="text" id="amount" />
-      </p>
-      <p>
-        Rate of return (percent): <input type="text" id="rate" />
-      </p>
-      <p>
-        Years: <input type="text" id="years" />
-      </p>
-      <input type="button" value="Calculate" onClick="calculate()">
-      <input type="button" value="Reset" onClick="reset()">
-      <p id='results_table'></p>
+  <!-- <h1> Savings Calculator</h1>
+
+  <p>Starting amount: <input type="text" id="amount" /></p>
+
+  <p>Rate of return (percent): <input type="text" id="rate" /></p>
+
+  <p>Years: <input type="text" id="years" /></p>
+
+  <input type="button" value="Calculate" onClick="calculate()">
+
+  <input type="button" value="Reset" onClick="reset()">
+
+  <p id='results_table'></p> -->
+  <div class="container">
+    <!-- <form> -->
+    <h3 class='page-title'>Monthly Savings Calculator</h3>
+    <!-- <form id="ciForm" class = 'form'> -->
+    <div class="form-group">
+      <label for="amount" class='form__label'>Starting Amount</label>
+      <input type="text" class="form__input" id="amount" placeholder="Example: 150000">
+    </div>
+
+    <div class="form-group">
+      <label for="rate" class='form__label'>Rate of Return (%)</label>
+      <input type="text" class="form__input" id="rate" placeholder="Example: 12">
+    </div>
+
+    <div class="form-group">
+      <label for="years" class='form__label'>Period (years)</label>
+      <input type="text" class="form__input" id="years" placeholder="Example: 2">
+    </div>
+
+    <!-- <div class="form-group">
+      <label for="termCompound" class='form__label'>Number of years</label>
+      <input type="text" class="form__input" id="termCompound" placeholder="Example: 2 (must be in terms of years)">
+    </div><br> -->
+    <input type="button" class="button" value="Calculate" onClick="calculate()">
+    <input type="button" class="button" value="Reset" onClick="reset()">
+    <!-- <div>
+      <p class="lead mt-3" id="ciOutput-01"></p>
+      <p class="lead mb-3" id="ciOutput-02"></p>
+    </div>
+    <div>
+      <input class="button" type="button" value="Reset" onClick="document.getElementById('ciForm').reset()">
+    </div> -->
+    <!-- </form> -->
+    <!-- </form> -->
+  </div>
+
+  <p id='results_table'></p>
 </body>
 
 </html>

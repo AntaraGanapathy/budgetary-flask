@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compound vs Simple Interest</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/activity1.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
 </head>
+
 <body>
     <section class="container">
         <div class="calculator">
             <div class="heading">
                 <h3>Compound Interest Calculator</h3>
-                <h3>New Commit for trial</h3>
-                <small>Your money growth over time using compound interest...</small>
             </div>
             <form class="compound-form">
                 <div class="input-group">
-                    <label for="initialamount">Initial Amount</label>
+                    <label for="initialamount">Initial Amount Invested</label>
                     <input type="number" id="initialamount" />
                 </div>
                 <div class="input-group">
@@ -28,13 +29,13 @@
                     <input type="number" id="years" />
                 </div>
                 <div class="input-group">
-                    <label for="rates">Compound Rate (%)</label>
+                    <label for="rates">Compound and Interest Rate (%)</label>
                     <input type="number" id="rates" />
                 </div>
-                <div class="input-group">
+                <!-- <div class="input-group">
                     <label for="rates2">Interest Rate (%)</label>
                     <input type="number" id="rates2" />
-                </div>
+                </div> -->
                 <div class="input-group">
                     <label for="rates">Compound Interval</label>
                     <select id="compound">
@@ -52,12 +53,15 @@
         <div class="results">
             <h3 id="message"></h3>
             <canvas id="data-set"></canvas>
-        </div>
-        <div class="results">
             <h3 id="message2"></h3>
             <canvas id="data-set2"></canvas>
         </div>
+        <!-- <div class="results">
+            <h3 id="message2"></h3>
+            <canvas id="data-set2"></canvas>
+        </div> -->
     </section>
     <script src="{{ url_for('static',filename='js/activity1.js') }}"></script>
 </body>
+
 </html>

@@ -15,7 +15,7 @@ html {
 .content_ul li {
 	list-style: disc !important;
 	margin-left: 10px;
-	margin-top:5px;
+	margin-top: 5px;
 }
 
 label {
@@ -148,8 +148,8 @@ label {
 	background: #1B4079;
 	color: #fff;
 }
-.valid_deactive
-{
+
+.valid_deactive {
 	font-size: 13px;
 	display: none;
 }

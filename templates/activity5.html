@@ -52,13 +52,13 @@
 
                 <label class="form-field-label" for="first-name">Investment Amount(Rs.): <em
                     class="alert">*</em></label>
-                    
+
                 <br>
                 <p id='val_amnt' style="color: red; margin-bottom: 0px;" class='valid_deactive'>
-                     
+
                   Investment Amount is required
-                  
-               </p>
+
+                </p>
                 <div class="form-wrap" style="display:grid; grid-auto-flow: column;">
                   <div>
                     <input type="number" name="" id="invstamount" required>
@@ -77,24 +77,24 @@
                 <br>
                 <label class="form-field-label" for="first-name">Expected Annual Returns (%) <em
                     class="alert">*</em></label>
-                    <br>
-                    <p id='val_rate' style="color: red; margin-bottom: 0px;" class='valid_deactive'>
-                     
-                      Expected Annual Returns is required
-                      
-                   </p>
+                <br>
+                <p id='val_rate' style="color: red; margin-bottom: 0px;" class='valid_deactive'>
+
+                  Expected Annual Returns is required
+
+                </p>
                 <input type="number" name="" id="expreturn" required>
               </div>
               <div class="col-sm-6">
                 <label class="form-field-label" for="first-name" id="field3">Investment Period (Years) : <em
                     class="alert">*</em></label>
-                    <br>
-                    <p id='val_per' style="color: red; margin-bottom: 0px;" class='valid_deactive'>
-                     
-                      Investment Period is required
-                      
-                   </p>
-                
+                <br>
+                <p id='val_per' style="color: red; margin-bottom: 0px;" class='valid_deactive'>
+
+                  Investment Period is required
+
+                </p>
+
                 <input type="number" name="" id="invstperiod" required>
                 <br>
                 <br>
@@ -225,15 +225,15 @@
       data: {
         labels: ['Amount in Rs'],
         datasets: [{
-            label: 'Invested Amount',
-            data: [result.amount_invested],
-            backgroundColor: '#F2AF29',
-          },
-          {
-            label: 'Profit Earned',
-            data: [result.profit_earned],
-            backgroundColor: '#45CB85',
-          }
+          label: 'Invested Amount',
+          data: [result.amount_invested],
+          backgroundColor: '#F2AF29',
+        },
+        {
+          label: 'Profit Earned',
+          data: [result.profit_earned],
+          backgroundColor: '#45CB85',
+        }
         ]
       },
       options: {
@@ -282,22 +282,22 @@
     console.log(result);
   }
   $("#calculatebtn").click(function () {
-      val_amnt.style.display='none';
-      val_rate.style.display='none';
-      val_per.style.display='none';
+    val_amnt.style.display = 'none';
+    val_rate.style.display = 'none';
+    val_per.style.display = 'none';
     if (validateInput()) {
-     
+
       $("#result_cont").fadeIn();
       loadResult();
     } else {
       if (invstamount.value == "") {
-       val_amnt.style.display='block';
+        val_amnt.style.display = 'block';
       }
       if (invstperiod.value == "") {
-        val_per.style.display='block';
+        val_per.style.display = 'block';
       }
       if (expreturn.value == "") {
-        val_rate.style.display='block';
+        val_rate.style.display = 'block';
       }
     }
 

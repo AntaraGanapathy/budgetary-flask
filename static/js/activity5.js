@@ -71,13 +71,12 @@ function calculateSIP() {
     return result;
 }
 
-function calculateProjectedData(var_year)
-{
+function calculateProjectedData(var_year) {
     let var1 = invstamount.value;
     let var2 = var_year;
     let var3 = expreturn.value;
     let var4 = inflation.value;
-    var proj_result={
+    var proj_result = {
         expected_amount: 0,
         amount_invested: 0,
         profit_earned: 0

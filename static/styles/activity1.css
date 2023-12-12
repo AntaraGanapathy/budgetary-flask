@@ -1,22 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700;900&display=swap");
 
+/* body {
+  background-color: #f2ffcc;
+} */
 * {
   padding: 0;
   margin: 0;
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
+  /* background-color: #f2ffcc; */
+
 }
 
 .container {
   display: flex;
+  /* background-color: #f2ffcc; */
+
   flex-direction: row;
   justify-content: center;
-  margin: 40px;
-  margin-top: 7%;
+  /* margin: 40px; */
+  margin-top: 5%;
 }
 
 .calculator {
-  width: 40%;
+
+  width: 50%;
   color: #4D7C8A;
 }
 
@@ -24,7 +32,10 @@
   font-size: 25px;
   color: #184079;
 }
-#message {
+
+#message,
+#message2 {
+  padding-top: 10px;
   font-size: 20px;
   color: #184079;
 }
@@ -33,7 +44,7 @@
   margin: 20px 0;
 }
 
-.input-group label {
+/* .input-group label {
   display: block;
 }
 
@@ -41,7 +52,7 @@
 .input-group button,
 .input-group select {
   width: 70%;
-  padding: 12px;
+  padding: 10px;
   border: 1px solid #184079;
   outline: none;
   border-radius: 5px;
@@ -50,9 +61,66 @@
 .input-group button {
   background-color: #184079;
   color: #fff;
+} */
+
+.input-group label {
+  font-size: 19px;
+  color: black;
+  display: block;
 }
 
+.input-group input,
+select {
+  /* color: white; */
+  text-indent: 1em;
+  width: clamp(120px, 50vw, 420px);
+  height: 2.5rem;
+  border: 1px solid black;
+  border-radius: 2px;
+  /* margin: 0.625rem auto; */
+  transition: all 250ms;
+
+  &:focus {
+    outline: none;
+    border-top-color: rgba(0, 0, 0, 0.1);
+  }
+
+  &::placeholder {
+    display: none;
+    color: transparent;
+
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  &:not(:placeholder-shown) {
+    border-top-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.input-group button {
+  border-radius: 30px;
+  background-color: #1B4079;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  width: 75%;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+/* .input-group input::before {
+  content: "\A";
+  white-space: pre;
+} */
+
 .results {
+  /* background-color: #f2ffcc; */
+
   box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.09);
   width: 50%;
   margin: 10px;
@@ -60,5 +128,5 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: white;
+  /* background-color: white; */
 }

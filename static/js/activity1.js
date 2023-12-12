@@ -38,18 +38,18 @@ function calculateGrowth(e) {
         const interest = parseInt(rates.value);
         const comp = parseInt(compound.value);
 
-        for(let i = 1; i <= period; i++) {
+        for (let i = 1; i <= period; i++) {
             let final = initial * Math.pow(1 + ((interest / 100) / comp), comp * i);
             data.push(toDecimal(final, 2));
-            let final2 = ( initial * interest * i ) / 100;
+            let final2 = (initial * interest * i) / 100;
             data2.push(toDecimal(final2, 2))
             labels.push("Year " + i);
             growth = toDecimal(final, 2);
             growth2 = toDecimal(final2, 2);
         }
         //
-        message.innerText = `You will have this amount ${growth} after ${period} years`;
-        message2.innerText = `You will have this amount ${growth2} after ${period} years`;
+        message.innerText = `You will have $${numberWithCommas(toDecimal(growth, 0))} after ${period} years`;
+        message2.innerText = `You will have $${numberWithCommas(toDecimal(growth2, 0))} after ${period} years`;
         drawGraph();
         drawGraph2();
     } catch (error) {
@@ -66,13 +66,13 @@ function drawGraph() {
         data: {
             labels,
             datasets: [
-            {
-                label: "compound",
-                data: data,
-                fill: true,
-                backgroundColor: "green",
-                borderWidth: 3
-            }]
+                {
+                    label: "Compound Interest",
+                    data: data,
+                    fill: true,
+                    backgroundColor: "green",
+                    borderWidth: 3
+                }]
         },
         options: {
             responsive: true,
@@ -102,10 +102,10 @@ function drawGraph2() {
             }],
             scales: {
                 y: {
-                  min: 0,
+                    min: 0,
                 }
             }
-        }    
+        }
     });
 
     click_counter = click_counter + 1;
@@ -113,4 +113,8 @@ function drawGraph2() {
 
 function toDecimal(value, decimals) {
     return +value.toFixed(decimals);
+}
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
