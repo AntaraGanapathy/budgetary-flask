@@ -34,6 +34,7 @@ class Article(db.Model):
     title = db.Column(db.String(200), nullable=False)
     author = db.Column(db.String(100), nullable=False)
     desc = db.Column(db.String(300), nullable=False)
+    date = db.Column(db.String(300), nullable=False)
 
 class RegisterForm(FlaskForm):
     username = StringField(validators=[
@@ -61,6 +62,17 @@ class LoginForm(FlaskForm):
 
     submit = SubmitField('Login')
 
+class CreateNewArticle(FlaskForm):
+    title = StringField('Article Title', validators=[InputRequired(), Length(max=30)])
+    author = StringField('Author', validators=[InputRequired(), Length(max=30)])
+    desc = TextAreaField('Description', validators=[InputRequired(), Length(max=100)])
+    date = TextAreaField('Date', validators=[InputRequired(), Length(max=100)])
+    # patient_type = RadioField('Patient Type', choices = ['Student', 'Staff'], validators=[InputRequired()], render_kw={"placeholder": "Patient Type"})
+    # med_condition = StringField('Medical Condition', validators=[InputRequired(), Length(max=100)], render_kw={"placeholder": "Medical Condition"})
+    # treatement = TextAreaField('Treatment Provided', validators=[InputRequired(), Length(max=200)], render_kw={"placeholder": "Treatment Provided"})
+    # price = StringField('Cost of Treatment', validators=[InputRequired(), Length(max=10)], render_kw={"placeholder": "Price"})
+
+    submit = SubmitField('Create')
 
 @app.route('/')
 def home():
