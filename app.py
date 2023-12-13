@@ -5,7 +5,7 @@ from sqlalchemy.sql import func
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, TextAreaField, RadioField
+from wtforms import StringField, PasswordField, SubmitField, TextAreaField, RadioField, DateField
 from wtforms.validators import InputRequired, Length, ValidationError
 
 app = Flask(__name__)
@@ -35,6 +35,7 @@ class Article(db.Model):
     author = db.Column(db.String(100), nullable=False)
     desc = db.Column(db.String(300), nullable=False)
     date = db.Column(db.String(300), nullable=False)
+    link = db.Column(db.String(300), nullable=False)
 
 class RegisterForm(FlaskForm):
     username = StringField(validators=[
@@ -66,7 +67,8 @@ class CreateNewArticle(FlaskForm):
     title = StringField('Article Title', validators=[InputRequired(), Length(max=30)])
     author = StringField('Author', validators=[InputRequired(), Length(max=30)])
     desc = TextAreaField('Description', validators=[InputRequired(), Length(max=100)])
-    date = TextAreaField('Date', validators=[InputRequired(), Length(max=100)])
+    date = DateField('Date', validators=[InputRequired()])
+    link = StringField('Link', validators=[InputRequired(), Length(max=200)])
     # patient_type = RadioField('Patient Type', choices = ['Student', 'Staff'], validators=[InputRequired()], render_kw={"placeholder": "Patient Type"})
     # med_condition = StringField('Medical Condition', validators=[InputRequired(), Length(max=100)], render_kw={"placeholder": "Medical Condition"})
     # treatement = TextAreaField('Treatment Provided', validators=[InputRequired(), Length(max=200)], render_kw={"placeholder": "Treatment Provided"})
@@ -101,6 +103,46 @@ def register():
         return redirect(url_for('login'))
 
     return render_template('register.html', form=form)
+
+@app.route('/new_article', methods=['GET', 'POST'])
+@login_required
+def new_article():
+    form = CreateNewArticle()
+    if form.validate_on_submit():
+        new_article = Article(title=form.title.data, author=form.author.data, desc=form.desc.data, date=form.date.data, link=form.link.data)
+        db.session.add(new_article)
+        db.session.commit()
+        return redirect(url_for('view_articles'))
+    return render_template('add_article.html', form=form)
+
+@app.route('/view_articles')
+@login_required
+def view_articles():
+    articles = Article.query.order_by(Article.id.desc()).limit(20).all()
+    return render_template('view_articles.html', articles = articles)
+
+# @app.route('/<int:article_id>/edit/', methods=('GET', 'POST'))
+# @login_required
+# def edit(article_id):
+#     article = Article.query.get_or_404(article_id)
+#     if request.method == 'POST':
+#             title = request.form['title']
+#             author = request.form['author']
+#             desc = request.form['desc']
+#             date = request.form['date']
+#             link = request.form['link']
+
+#             article.title = title
+#             article.author = author
+#             article.desc = desc
+#             article.date = date
+#             article.link = link
+
+#             db.session.add(article)
+#             db.session.commit()
+
+#             return redirect(url_for('view_articles'))
+#     return render_template('edit.html', article=article)
 
 @app.route('/dashboard')
 def dashboard():

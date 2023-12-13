@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
+    <title>View Articles</title>
+
+    <style>
+        #records {
+            margin-left: auto;
+            margin-right: auto;
+            width: 75%;
+        }
+
+        #table-headings {
+            background-color: #aba9a9;
+        }
+
+        #table-cells {
+            background-color: #e8e8e8;
+        }
+
+        #row-id {
+            font-weight: bold;
+        }
+
+        .dropbtn {
+            background-color: #919191;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropbtn:hover,
+        .dropbtn:focus {
+            background-color: #919191;
+        }
+
+        .dropdown {
+            margin-left: 3%;
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            padding-right: 10%;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown a:hover {
+            background-color: #ddd;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>View Articles</h1>
+    <div>
+        <table id='records' border='1px' cellspacing='0' cellpadding='15'>
+            <tr id='table-headings'>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>Link</th>
+                <!-- <th>Medical Condition</th>
+                <th>Treatment</th>
+                <th>Price</th>
+                <th>Date Visited</th>
+                <th>Edit</th> -->
+            </tr>
+            {% for article in articles %}
+            <tr id='table-cells'>
+                <td>{{ article.title }}</td>
+                <td>{{ article.author }}</td>
+                <td>{{ article.desc }}</td>
+                <td>{{ article.date }}</td>
+                <td>{{ article.link }}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+</body>
+
+</html>

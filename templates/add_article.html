@@ -4,20 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Create Record</title>
+  <title>Add Article</title>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/form.css') }}">
-  <nav>
-    <a href="{{url_for('dashboard')}}">Dashboard</a>
-    <a href="{{url_for('new_record')}}" style="text-decoration: underline;">Create record</a>
-    <a href="{{url_for('view_records')}}">View recent</a>
-    <a href="{{url_for('search_records')}}">Search</a>
-  </nav>
+
 </head>
 
 <body>
 
-  <h1 style="margin-top: 5%;">Create a New Record</h1>
+  <h1 style="margin-top: 5%;">Add a New Article</h1>
 
   <div class="container" style="margin-top: 3%;">
     <form method="POST" action="" class="form">
@@ -34,6 +29,9 @@
 
       {{ form.date.label(class = 'form__label') }}
       {{ form.date(class = 'form__input') }} <br>
+
+      {{ form.link.label(class = 'form__label') }}
+      {{ form.link(class = 'form__input') }} <br>
 
       {{ form.submit(id = 'button') }}
     </form>
