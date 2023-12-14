@@ -64,7 +64,7 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Login')
 
 class CreateNewArticle(FlaskForm):
-    title = StringField('Article Title', validators=[InputRequired(), Length(max=30)])
+    title = StringField('Article Title', validators=[InputRequired(), Length(max=100)])
     author = StringField('Author', validators=[InputRequired(), Length(max=30)])
     desc = TextAreaField('Description', validators=[InputRequired(), Length(max=100)])
     date = DateField('Date', validators=[InputRequired()])
@@ -202,7 +202,8 @@ def tools():
 
 @app.route('/blogs')
 def blogs():
-    return render_template('blogs.html')
+    articles = Article.query.order_by(Article.id.desc()).all()
+    return render_template('blogs.html', articles=articles)
 
 if __name__ == "__main__":
     app.run(port=8000, debug=True)
