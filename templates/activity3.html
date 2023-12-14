@@ -8,10 +8,16 @@
     <title>Foreign Exchange Calculator</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/activity2.css') }}">
+    <nav>
+        <a href="{{url_for('dashboard')}}">Dashboard</a>
+        <a href="{{url_for('activities')}}" style="text-decoration: underline;">Activities</a>
+        <a href="{{url_for('tools')}}">Tools</a>
+        <a href="{{url_for('blogs')}}">Blogs</a>
+    </nav>
 </head>
 
 <body>
-    <div class="container" style="padding-top: 5%;">
+    <div class="container" style="padding-top: 2%;">
 
         <h1 class='page-title'>Foreign Exchange Converter</h1>
         <img src="{{ url_for('static',filename='images/activities-icon3.png') }}" width="8%">

@@ -7,8 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Compound Interest Calculator</title>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/activity2.css') }}">
-  <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}"> -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
   <script src="{{ url_for('static',filename='js/activity2.js') }}"></script>
+  <nav>
+    <a href="{{url_for('dashboard')}}">Dashboard</a>
+    <a href="{{url_for('activities')}}" style="text-decoration: underline;">Activities</a>
+    <a href="{{url_for('tools')}}">Tools</a>
+    <a href="{{url_for('blogs')}}">Blogs</a>
+</nav>
   <style>
     /* #main-heading {
             text-align: center;

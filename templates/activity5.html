@@ -8,8 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/activity5.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <nav>
+    <a href="{{url_for('dashboard')}}">Dashboard</a>
+    <a href="{{url_for('activities')}}" style="text-decoration: underline;">Activities</a>
+    <a href="{{url_for('tools')}}">Tools</a>
+    <a href="{{url_for('blogs')}}">Blogs</a>
+  </nav>
 </head>
 
 <body>
@@ -41,7 +47,7 @@
     <section class="header-section">
       <div class="caption-cont">
 
-        <h1 class="font-weight-bold" id="primecap">SIP CALCULATOR</h1>
+        <h3 class='page-title'>Systematic Investment Plan (SIP) Calculator</h3>
 
       </div>
       <div class="container-fluid">
@@ -115,8 +121,8 @@
 
           </form>
           <br><br>
-          <center><button type="button" class="btn btn-dark" id="calculatebtn">Calculate</button>
-          </center>
+          <button type="button" class="btn btn-dark" id="calculatebtn">Calculate</button>
+
         </div>
       </div>
       <div class="container-fluid" id="result_cont" style="display: none;">
@@ -159,7 +165,7 @@
           </div>
         </div>
       </div>
-      <div class="container-fluid" id="static-content">
+      <!-- <div class="container-fluid" id="static-content">
         <div class="container">
           <div class="container" style="padding:20px; text-align: justify;">
             <h2>SIP Calculator </h2> SIP Calculator is a tool which is used to make a <b>Systematic Investment Plan.
@@ -175,9 +181,9 @@
 
           </div>
 
-          <!-- <div class="container"><br>
+          <div class="container"><br>
             <center><img src="./images/imgC.jpg" alt="" style="width:65vw;height:auto"></center>
-          </div> -->
+          </div>
 
           <div class="container" style="padding:20px; text-align: justify;">
             SIP stands for Systematic Investment Planning. This is an effective way of compounding money over the years.
@@ -186,7 +192,7 @@
             compound money over the years without knowing anything about the market.
           </div>
         </div>
-      </div>
+      </div> -->
 
 
 

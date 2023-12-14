@@ -37,14 +37,14 @@ li {
 .header {
 	width: 100%;
 	height: auto;
-	background-color: #F0F0F0;
+	/* background-color: #F0F0F0; */
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	/* clip-path: polygon(100% 0%, 100% 80%, 50% 100%, 0 80%, 0 0); */
 	position: relative;
 }
 
-.navbar {
+/* .navbar {
 	background-color: #1B4079;
 }
 
@@ -63,7 +63,7 @@ li {
 .nav-item a {
 	color: #fff !important;
 	font-weight: bold;
-}
+} */
 
 .header-section {
 
@@ -87,7 +87,7 @@ li {
 	padding: 50px;
 	background: #fff;
 	border-radius: 5px;
-	box-shadow: 0px 0px 3px 3px #dad7d7;
+	/* box-shadow: 0px 0px 3px 3px #dad7d7; */
 }
 
 input[type=number] {
@@ -120,7 +120,7 @@ label {
 #static-content>.container {
 	background: #fff;
 	border-radius: 5px;
-	box-shadow: 0px 0px 3px 3px #dad7d7;
+	/* box-shadow: 0px 0px 3px 3px #dad7d7; */
 	padding: 20px;
 }
 

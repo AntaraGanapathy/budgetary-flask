@@ -2,6 +2,33 @@
     text-align: center;
 }
 
+nav a {
+    display: inline-block;
+    width: 18%;
+    min-width: 65px;
+    margin: 1% 2% 1% 2%;
+    padding: 1%;
+    text-decoration: none;
+    border-radius: 30px;
+    text-align: center;
+    background-color: #FFFFFF;
+    color: black;
+    font-weight: bold;
+    border: 1px solid #333333;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    /* background-color: #f2ffcc; */
+}
+
+nav {
+    background-color: #1B4079;
+    padding: 0.5%;
+    margin-bottom: 3%;
+    border: 1px solid #333333;
+}
+
 #brand-name {
     color: #1B4079;
     font-size: 80px;
