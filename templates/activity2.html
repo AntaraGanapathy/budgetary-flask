@@ -9,10 +9,10 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/activity2.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
   <script src="{{ url_for('static',filename='js/activity2.js') }}"></script>
-  <nav>
+  <nav style="padding-left: 1.5%; position: relative;text-align: center;">
     <a href="{{url_for('dashboard')}}">Dashboard</a>
     <a href="{{url_for('activities')}}" style="text-decoration: underline;">Activities</a>
-    <a href="{{url_for('tools')}}">Tools</a>
+    <!-- <a href="{{url_for('tools')}}">Tools</a> -->
     <a href="{{url_for('blogs')}}">Blogs</a>
 </nav>
   <style>
@@ -55,8 +55,8 @@
       </div><br>
       <button type="submit" class="button" onclick="compoundInterest()">Submit</button>
       <div>
-        <p class="lead mt-3" id="ciOutput-01"></p>
-        <p class="lead mb-3" id="ciOutput-02"></p>
+        <p class="lead mt-3" id="ciOutput-01" style="font-size: 20px;"></p>
+        <p class="lead mb-3" id="ciOutput-02" style="font-size: 20px;"></p>
       </div>
       <div>
         <input class="button" type="button" value="Reset" onClick="document.getElementById('ciForm').reset()">

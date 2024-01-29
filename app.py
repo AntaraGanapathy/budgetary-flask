@@ -203,6 +203,7 @@ def tools():
 @app.route('/blogs')
 def blogs():
     articles = Article.query.order_by(Article.id.desc()).all()
+    print(articles)
     return render_template('blogs.html', articles=articles)
 
 if __name__ == "__main__":

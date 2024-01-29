@@ -8,16 +8,18 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/blogs.css') }}">
     <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
     <title>Blogs</title>
-    <nav>
+    <nav style="padding-left: 1.5%; position: relative;text-align: center;">
         <a href="{{url_for('dashboard')}}">Dashboard</a>
         <a href="{{url_for('activities')}}" style="text-decoration: underline;">Activities</a>
         <a href="{{url_for('tools')}}">Tools</a>
-        <a href="{{url_for('blogs')}}">Blogs</a>
+        <!-- <a href="{{url_for('blogs')}}">Blogs</a> -->
     </nav>
 </head>
 
 <body>
-    <h3 class='page-title'>Blogs</h3>
+    <h3 class='page-title' style="text-align: center; font-size: 40px;">Blogs</h3>
+    <h4 style="text-align: center; font-size: 30px; font-style: italic;">Eager to learn more? Check out our favourite
+        blogs on financial discipline!</h4>
     <!-- <div class="center">
         <div class="article-card">
             <div class="content">
@@ -28,24 +30,26 @@
                 alt="article-cover" />
         </div>
     </div> -->
-    {% for article in articles %}
-    <div class="w3-card-4 w3-margin w3-white">
-        <div class="w3-container">
-            <h3><b>{{article.title}}</b></h3>
-            <h5>{{article.author}}, <span class="w3-opacity">{{article.date}}</span></h5>
-        </div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        {% for article in articles %}
+        <div class="w3-card-4 w3-margin w3-white">
+            <div class="w3-container">
+                <h3><b>{{article.title}}</b></h3>
+                <h5>{{article.author}}, <span class="w3-opacity">{{article.date}}</span></h5>
+            </div>
 
-        <div class="w3-container">
-            <p>{{article.desc}}</p>
-            <div class="w3-row">
-                <div class="w3-col m8 s12">
-                    <p><a class="w3-button w3-padding-large w3-white w3-border" href="{{article.link}}" target=”_blank”><b>READ MORE
-                                »</b></button></p>
+            <div class="w3-container">
+                <p>{{article.desc}}</p>
+                <div class="w3-row">
+                    <div class="w3-col m8 s12">
+                        <p><a class="w3-button w3-padding-large w3-white w3-border" href="{{article.link}}" target=”_blank”><b>READ MORE»</b></button></p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-            {% endfor %}
+
+    {% endfor %}
     <!-- <div class="w3-card-4 w3-margin w3-white">
         <div class="w3-container">
             <h3><b>BLOG ENTRY</b></h3>

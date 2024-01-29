@@ -15,6 +15,7 @@ nav a {
     color: black;
     font-weight: bold;
     border: 1px solid #333333;
+    font-size: 20px;
 }
 
 nav a:hover {
@@ -92,7 +93,7 @@ nav {
     background-color: #1B4079;
     color: white;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
     /* border: 1px solid #333333; */
 }
 
@@ -102,11 +103,11 @@ nav {
 
 .dashboard-desc {
     padding: 2%;
-    font-size: 18px;
+    font-size: 23px;
 }
 
 .dashboard-heading {
-    font-size: 35px;
+    font-size: 38px;
 }
 
 .page-title {

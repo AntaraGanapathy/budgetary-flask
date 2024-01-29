@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/activities.css') }}">
+    
     <title>Activities</title>
     <nav>
         <a href="{{url_for('dashboard')}}">Dashboard</a>
         <a href="{{url_for('activities')}}" style="text-decoration: underline;">Activities</a>
-        <a href="{{url_for('tools')}}">Tools</a>
+        <!-- <a href="{{url_for('tools')}}">Tools</a> -->
         <a href="{{url_for('blogs')}}">Blogs</a>
     </nav>
 </head>
@@ -59,15 +60,19 @@
             <td>
                 <div class='dashboard-subcontainer'>
                     <h3 class='dashboard-heading'>Savings Target Calculator</h3>
+                    <img class='dashboard-img' src="{{ url_for('static',filename='images/activities-icon5.png') }}"
+                        width="25%">
 
                     <a href="{{url_for('activity5')}}" id='button-dashboard'>Get Started!</a>
                 </div>
             </td>
             <td>
                 <div class='dashboard-subcontainer'>
-                    <h3 class='dashboard-heading'>Activities</h3>
+                    <h3 class='dashboard-heading'>Continue Learning!</h3>
+                    <img class='dashboard-img' src="{{ url_for('static',filename='images/activities-icon6.png') }}"
+                        width="25%">
 
-                    <a href="{{url_for('activities')}}" id='button-dashboard'>Get Started!</a>
+                    <a href="{{url_for('blogs')}}" id='button-dashboard'>Read our blogs!</a>
                 </div>
             </td>
         </tr>

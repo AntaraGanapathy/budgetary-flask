@@ -8,10 +8,10 @@
     <title>Foreign Exchange Calculator</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/activity2.css') }}">
-    <nav>
+    <nav style="padding-left: 1.5%; position: relative;text-align: center;">
         <a href="{{url_for('dashboard')}}">Dashboard</a>
         <a href="{{url_for('activities')}}" style="text-decoration: underline;">Activities</a>
-        <a href="{{url_for('tools')}}">Tools</a>
+        <!-- <a href="{{url_for('tools')}}">Tools</a> -->
         <a href="{{url_for('blogs')}}">Blogs</a>
     </nav>
 </head>
@@ -357,7 +357,7 @@
                     <option value="ZWL">Zimbabwean Dollar</option>
                 </select>
             </div>
-            <input type="submit" class="button" style="font-size: 15px; margin-top: 5%;" value="Convert">
+            <input type="submit" class="button" style="font-size: 18px; margin-top: 5%;" value="Convert">
             {% if time %}
             <h4 style="color: #184079; text-align: center;">Last Update: {{time}} UTC</h4>
             {% endif %}
