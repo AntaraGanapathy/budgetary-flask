@@ -4,14 +4,6 @@
 	box-sizing: border-box;
 }
 
-/* body{
-	text-align: center;
-} */
-
-/* html {
-	scroll-behavior: smooth;
-} */
-
 #content_ul {
 	margin-left: 10px;
 }
@@ -41,33 +33,10 @@ li {
 .header {
 	width: 100%;
 	height: auto;
-	/* background-color: #F0F0F0; */
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
-	/* clip-path: polygon(100% 0%, 100% 80%, 50% 100%, 0 80%, 0 0); */
 	position: relative;
 }
-
-/* .navbar {
-	background-color: #1B4079;
-}
-
-.navbar:before {
-	content: "";
-	position: absolute;
-	top: 0%;
-	bottom: 0%;
-	left: 0%;
-	right: 0%;
-	opacity: 100%;
-	z-index: -1;
-	background-color: #1B4079;
-}
-
-.nav-item a {
-	color: #fff !important;
-	font-weight: bold;
-} */
 
 .header-section {
 
@@ -81,7 +50,6 @@ li {
 .caption-cont {
 	color: #1B4079;
 	text-align: center;
-
 }
 
 #calc-form {
@@ -91,7 +59,6 @@ li {
 	padding: 50px;
 	background: #fff;
 	border-radius: 5px;
-	/* box-shadow: 0px 0px 3px 3px #dad7d7; */
 }
 
 input[type=number] {
@@ -124,7 +91,6 @@ label {
 #static-content>.container {
 	background: #fff;
 	border-radius: 5px;
-	/* box-shadow: 0px 0px 3px 3px #dad7d7; */
 	padding: 20px;
 }
 
@@ -189,40 +155,40 @@ label {
 	border-radius: 2px;
 	margin: 0.625rem auto;
 	transition: all 250ms;
-  
+
 	&:focus {
-	  outline: none;
-	  border-top-color: rgba(0, 0, 0, 0.1);
+		outline: none;
+		border-top-color: rgba(0, 0, 0, 0.1);
 	}
-  
+
 	&::placeholder {
-	  display: none;
-	  color: transparent;
-  
-	  -webkit-user-select: none;
-	  -ms-user-select: none;
-	  user-select: none;
+		display: none;
+		color: transparent;
+
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
 	}
-  
+
 	&:not(:placeholder-shown) {
-	  border-top-color: rgba(0, 0, 0, 0.5);
+		border-top-color: rgba(0, 0, 0, 0.5);
 	}
-  }
-  
-  .form__label {
+}
+
+.form__label {
 	font-size: 19px;
 	color: black;
 	display: block;
-  }
+}
 
-  .form {
+.form {
 	display: inline-block;
 	align-self: center;
 	width: 75%;
 	margin: auto;
-  }
+}
 
-  .button {
+.button {
 	border-radius: 30px;
 	background-color: #1B4079;
 	border: none;
@@ -235,12 +201,4 @@ label {
 	cursor: pointer;
 	margin: 5px;
 	margin-left: 2%;
-  }
-
-  /* #center {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 200px;
-	border: 3px solid green; 
-  } */
+}

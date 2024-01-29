@@ -20,7 +20,6 @@ nav a {
 
 nav a:hover {
     text-decoration: underline;
-    /* background-color: #f2ffcc; */
 }
 
 nav {
@@ -36,7 +35,6 @@ nav {
     font-family: "Trebuchet MS", sans-serif;
     margin-top: 20px;
     margin-bottom: 0px;
-    /* background-color: #b5c8b1; */
 }
 
 #desc {
@@ -59,7 +57,6 @@ nav {
     color: white;
     font-weight: bold;
     font-size: 25px;
-    /* border: 1px solid #333333; */
 }
 
 #dashboard-container {
@@ -69,9 +66,7 @@ nav {
     column-gap: 5%;
     margin-left: 3%;
     margin-right: 3%;
-    /* position: absolute; */
     margin-top: 10%;
-    /* transform: translate(50%, 50%); */
 }
 
 .dashboard-subcontainer {
@@ -94,7 +89,6 @@ nav {
     color: white;
     font-weight: bold;
     font-size: 18px;
-    /* border: 1px solid #333333; */
 }
 
 .dashboard-subcontainer:hover {

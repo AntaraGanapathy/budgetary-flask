@@ -12,7 +12,6 @@
     <nav style="padding-left: 1.5%; position: relative;text-align: center;">
         <a href="{{url_for('dashboard')}}">Dashboard</a>
         <a href="{{url_for('activities')}}" style="text-decoration: underline;">Activities</a>
-        <!-- <a href="{{url_for('tools')}}">Tools</a> -->
         <a href="{{url_for('blogs')}}">Blogs</a>
     </nav>
 </head>
@@ -36,10 +35,6 @@
                     <label for="rates">Compound and Interest Rate (%)</label>
                     <input type="number" id="rates" />
                 </div>
-                <!-- <div class="input-group">
-                    <label for="rates2">Interest Rate (%)</label>
-                    <input type="number" id="rates2" />
-                </div> -->
                 <div class="input-group">
                     <label for="rates">Compound Interval</label>
                     <select id="compound">
@@ -60,10 +55,6 @@
             <h3 id="message2"></h3>
             <canvas id="data-set2"></canvas>
         </div>
-        <!-- <div class="results">
-            <h3 id="message2"></h3>
-            <canvas id="data-set2"></canvas>
-        </div> -->
     </section>
     <script src="{{ url_for('static',filename='js/activity1.js') }}"></script>
 </body>
