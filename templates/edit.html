@@ -8,14 +8,11 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/form.css') }}">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <!-- <script src="{{url_for('static', filename='edit.js')}}"></script> -->
-
+  
   <nav style="padding-left: 1.5%; position: relative;text-align: center;">
     <a href="{{url_for('dashboard')}}">Dashboard</a>
     <a href="{{url_for('activities')}}" style="text-decoration: underline;">Activities</a>
-    <a href="{{url_for('tools')}}">Tools</a>
-    <!-- <a href="{{url_for('blogs')}}">Blogs</a> -->
-</nav>
+    <a href="{{url_for('blogs')}}">Tools</a></nav>
 </head>
 
 <body onload="flashMessage()">

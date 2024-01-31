@@ -69,11 +69,6 @@ class CreateNewArticle(FlaskForm):
     desc = TextAreaField('Description', validators=[InputRequired(), Length(max=100)])
     date = DateField('Date', validators=[InputRequired()])
     link = StringField('Link', validators=[InputRequired(), Length(max=200)])
-    # patient_type = RadioField('Patient Type', choices = ['Student', 'Staff'], validators=[InputRequired()], render_kw={"placeholder": "Patient Type"})
-    # med_condition = StringField('Medical Condition', validators=[InputRequired(), Length(max=100)], render_kw={"placeholder": "Medical Condition"})
-    # treatement = TextAreaField('Treatment Provided', validators=[InputRequired(), Length(max=200)], render_kw={"placeholder": "Treatment Provided"})
-    # price = StringField('Cost of Treatment', validators=[InputRequired(), Length(max=10)], render_kw={"placeholder": "Price"})
-
     submit = SubmitField('Create')
 
 @app.route('/')
@@ -120,29 +115,6 @@ def new_article():
 def view_articles():
     articles = Article.query.order_by(Article.id.desc()).limit(20).all()
     return render_template('view_articles.html', articles = articles)
-
-# @app.route('/<int:article_id>/edit/', methods=('GET', 'POST'))
-# @login_required
-# def edit(article_id):
-#     article = Article.query.get_or_404(article_id)
-#     if request.method == 'POST':
-#             title = request.form['title']
-#             author = request.form['author']
-#             desc = request.form['desc']
-#             date = request.form['date']
-#             link = request.form['link']
-
-#             article.title = title
-#             article.author = author
-#             article.desc = desc
-#             article.date = date
-#             article.link = link
-
-#             db.session.add(article)
-#             db.session.commit()
-
-#             return redirect(url_for('view_articles'))
-#     return render_template('edit.html', article=article)
 
 @app.route('/dashboard')
 def dashboard():
