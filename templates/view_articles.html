@@ -9,7 +9,6 @@
     <nav>
         <a href="{{url_for('dashboard')}}">Dashboard</a>
         <a href="{{url_for('activities')}}" style="text-decoration: underline;">Activities</a>
-        <a href="{{url_for('tools')}}">Tools</a>
         <a href="{{url_for('blogs')}}">Blogs</a>
     </nav>
 
@@ -89,6 +88,7 @@
                 <th>Description</th>
                 <th>Date</th>
                 <th>Link</th>
+                <th>Edit</th>
                 <!-- <th>Medical Condition</th>
                 <th>Treatment</th>
                 <th>Price</th>
@@ -102,6 +102,7 @@
                 <td>{{ article.desc }}</td>
                 <td>{{ article.date }}</td>
                 <td>{{ article.link }}</td>
+                <td><a href="{{url_for('edit', article_id=article.id)}}">Edit</a></td>
             </tr>
             {% endfor %}
 

@@ -88,7 +88,7 @@ def login():
         if user:
             if bcrypt.check_password_hash(user.password, form.password.data):
                 login_user(user)
-                return redirect(url_for('dashboard'))
+                return redirect(url_for('view_articles'))
     return render_template('login.html', form=form)
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -205,6 +205,33 @@ def blogs():
     articles = Article.query.order_by(Article.id.desc()).all()
     print(articles)
     return render_template('blogs.html', articles=articles)
+
+
+
+
+@app.route('/<int:article_id>/edit/', methods=('GET', 'POST'))
+def edit(article_id):
+    article = Article.query.get_or_404(article_id)
+    print(type(article))
+    if request.method == 'POST':
+            title = request.form['title']
+            author = request.form['author']
+            desc = request.form['desc']
+            date = request.form['date']
+            link = request.form['link']
+
+            article.title = title
+            article.author = author
+            article.desc = desc
+            article.date = date
+            article.link = link
+
+            db.session.add(article)
+            db.session.commit()
+
+            return redirect(url_for('blogs'))
+    
+    return render_template('edit.html', article=article)
 
 if __name__ == "__main__":
     app.run(port=8000, debug=True)

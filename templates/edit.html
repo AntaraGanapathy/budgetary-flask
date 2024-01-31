@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Article</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/form.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <!-- <script src="{{url_for('static', filename='edit.js')}}"></script> -->
+
+  <nav style="padding-left: 1.5%; position: relative;text-align: center;">
+    <a href="{{url_for('dashboard')}}">Dashboard</a>
+    <a href="{{url_for('activities')}}" style="text-decoration: underline;">Activities</a>
+    <a href="{{url_for('tools')}}">Tools</a>
+    <!-- <a href="{{url_for('blogs')}}">Blogs</a> -->
+</nav>
+</head>
+
+<body onload="flashMessage()">
+  <script>
+    function flashMessage() {
+      if ("{{ flash_message }}" == "True") {
+        alert("Null values received, please fill all fields");
+      }
+    }
+  </script>
+  <h1 style="text-align: center;"> Edit Blog</h1>
+  <div class='container'>
+    <form method="post" class="form">
+      <p>
+        <label for="title" class="form__label">Title</label><br>
+        <input type="text" name="title" placeholder="Title" class="form__input"
+          value="{{ article.title }}"></input>
+      </p>
+
+      <p>
+        <label for="author" class="form__label">Author's Name</label><br>
+        <input type="text" name="author" placeholder="Author" class="form__input"
+          value="{{ article.author }}"></input>
+      </p>
+
+      <p>
+        <label for="desc" class="form__label">Description</label><br>
+        <input type="text" name="desc" placeholder="Description" class="form__input"
+          value="{{ article.desc }}"></input>
+      </p>
+
+      <p>
+        <label for="date" class="form__label">Date</label><br>
+        <input type="date" name="date" class="form__input"
+          value="{{ article.date }}"></input>
+      </p>
+
+      <p>
+        <label for="link" class="form__label">Link</label><br>
+        <input type="text" name="link" placeholder="Link" class="form__input"
+          value="{{ article.link }}"></input>
+      </p>
+
+      <p>
+        <button type="submit" id="button" style="margin-left: 20px;">Submit</button>
+      </p>
+    </form>
+  </div>
+</body>
+
+</html>

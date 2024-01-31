@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/blogs.css') }}">
-    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
     <title>Blogs</title>
     <nav style="padding-left: 1.5%; position: relative;text-align: center;">
         <a href="{{url_for('dashboard')}}">Dashboard</a>
-        <a href="{{url_for('activities')}}" style="text-decoration: underline;">Activities</a>
-        <a href="{{url_for('tools')}}">Tools</a>
-        <!-- <a href="{{url_for('blogs')}}">Blogs</a> -->
+        <a href="{{url_for('activities')}}">Activities</a>
+        <!-- <a href="{{url_for('tools')}}">Tools</a> -->
+        <a href="{{url_for('blogs')}}" style="text-decoration: underline;">Blogs</a>
     </nav>
 </head>
 
@@ -30,26 +29,93 @@
                 alt="article-cover" />
         </div>
     </div> -->
-    <div style="display: flex; justify-content: center; align-items: center;">
+    <div class="container">
+        {% for article in articles %}
+        <div class="card">
+            <!-- <div class="card__header">
+            </div> -->
+            <div class="card__body">
+                <!-- <span class="tag tag-blue">Technology</span> -->
+                <h4>{{article.title}}</h4>
+                <p style="font-size: 20px;">{{article.desc}}</p>
+                <div class="user">
+                    <div class="user__info">
+                        <h5 style="font-size: 18px;">{{article.author}}, {{article.date}}</h5>
+                        <a style="font-size: 16px;" href="{{article.link}}" target=”_blank”>Read More >></a>
+                        <!-- <small>2h ago</small> -->
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="card__footer">
+                <div class="user">
+                    <div class="user__info">
+                        <h5 style="font-size: 15px;">{{article.author}}, {{article.date}}</h5>
+                        <a href="{{article.link}}">Read More >></a>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        {% endfor %}
+        <!-- <div class="card">
+            <div class="card__header">
+            </div>
+            <div class="card__body">
+                <span class="tag tag-brown">Food</span>
+                <h4>Delicious Food</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo
+                    doloribus. Doloremque, nihil! At ea atque quidem!</p>
+            </div>
+            <div class="card__footer">
+                <div class="user">
+                    <div class="user__info">
+                        <h5>Jony Doe</h5>
+                        <small>Yesterday</small>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- <div class="card">
+            <div class="card__header">
+            </div>
+            <div class="card__body">
+                <span class="tag tag-red">Automobile</span>
+                <h4>Race to your heart content</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo
+                    doloribus. Doloremque, nihil! At ea atque quidem!</p>
+            </div>
+            <div class="card__footer">
+                <div class="user">
+                    <div class="user__info">
+                        <h5>John Doe</h5>
+                        <small>2d ago</small>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <!-- <div style="display: flex; justify-content: center; align-items: center;">
         {% for article in articles %}
         <div class="w3-card-4 w3-margin w3-white">
             <div class="w3-container">
                 <h3><b>{{article.title}}</b></h3>
-                <h5>{{article.author}}, <span class="w3-opacity">{{article.date}}</span></h5>
+                <h5>{{article.author}}, {{article.date}}</h5>
             </div>
 
             <div class="w3-container">
                 <p>{{article.desc}}</p>
                 <div class="w3-row">
                     <div class="w3-col m8 s12">
-                        <p><a class="w3-button w3-padding-large w3-white w3-border" href="{{article.link}}" target=”_blank”><b>READ MORE»</b></button></p>
+                        <div class="w3-container">
+                            <a href="{{article.link}}" target=”_blank”><b>READ MORE»</b>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        {% endfor %}
+    </div> -->
 
-    {% endfor %}
+
     <!-- <div class="w3-card-4 w3-margin w3-white">
         <div class="w3-container">
             <h3><b>BLOG ENTRY</b></h3>
