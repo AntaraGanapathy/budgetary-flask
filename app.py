@@ -7,6 +7,7 @@ from flask_login import UserMixin, login_user, LoginManager, login_required, log
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, TextAreaField, RadioField, DateField
 from wtforms.validators import InputRequired, Length, ValidationError
+import psycopg2
 
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
