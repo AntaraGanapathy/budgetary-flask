@@ -35,7 +35,7 @@ class Article(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(200), nullable=False)
     author = db.Column(db.String(100), nullable=False)
-    desc = db.Column(db.String(300), nullable=False)
+    desc = db.Column(db.String(800), nullable=False)
     date = db.Column(db.String(300), nullable=False)
     link = db.Column(db.String(300), nullable=False)
 
