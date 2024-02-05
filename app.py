@@ -14,7 +14,7 @@ bcrypt = Bcrypt(app)
 API_KEY = 'S1HTWWB10I1LB5VA'
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/antarag/Desktop/budgetary-flask/database.db'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://qfqnsybmmknbox:83b39905824adf5bf12a40820eddfcabe94a64f59696b1884df46823db66b072@ec2-52-6-117-96.compute-1.amazonaws.com:5432/d5c1rr2uqtoads'
-'
+
 app.config['SECRET_KEY'] = 'thisisasecretkey'
 db = SQLAlchemy(app)
 app.app_context().push()
