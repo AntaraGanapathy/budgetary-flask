@@ -13,7 +13,7 @@ app = Flask(__name__)
 bcrypt = Bcrypt(app)
 API_KEY = 'S1HTWWB10I1LB5VA'
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/antarag/Desktop/budgetary-flask/database.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://qfqnsybmmknbox:83b39905824adf5bf12a40820eddfcabe94a64f59696b1884df46823db66b072@ec2-52-6-117-96.compute-1.amazonaws.com:5432/d5c1rr2uqtoads'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://lqqzsmfnhvqzjc:447fc05c64e8919d26ede129963d32ee029268cdad80bb849c548e1e8a72b0d3@ec2-44-214-132-149.compute-1.amazonaws.com:5432/ddhkrcg4uu76gs'
 
 app.config['SECRET_KEY'] = 'thisisasecretkey'
 db = SQLAlchemy(app)
